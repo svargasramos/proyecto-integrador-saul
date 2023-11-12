@@ -84,6 +84,11 @@ p {
 
 img {
     width: 100%;
+    background-color: green;
+    border: solid red;
+    border: solid blue;
+    box-shadow: 0 0 10px rgb(124, 112, 112);
+    border-radius: 20px;
 }
 
 .container {
@@ -108,10 +113,22 @@ header {
     align-items: center;
 }
 
+#hamb-btn {
+    display: none;
+}
+#hamb-btn img{
+    height: 45px;
+}
+
 .navbar__menu {
     display: flex;
     align-items: center;
     gap: var(--spacing-20);
+    overflow: hidden;
+    transition: ease-in-out all 0.5s;
+}
+.navbar__menu  .navbar__item.submenu__item{
+    display: none;
 }
 
 .navbar__link {
@@ -220,6 +237,7 @@ header {
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     padding: var(--spacing-16) 0;
+    grid-auto-flow: row;
 }
 
 .collection:nth-child(2) .collection__cover {
@@ -249,7 +267,7 @@ header {
 
 .collection__link {
     display: inline-block;
-    font-size: var(--font-medium);
+    font-size: var(--font-  um);
     background-color: var(--dark-bg-solid);
     color: var(--light-font-solid);
     padding: var(--spacing-16) var(--spacing-36);
@@ -365,3 +383,54 @@ header {
         opacity: 1;
     }
 }
+/* responsive */
+/* Hasta 599px */
+@media only screen and (max-width: 960px) {
+    body {
+        background-color: lightblue;
+        overflow-x: hidden;
+    }
+    #hamb-btn {
+        display: block;
+    }
+    .navbar__menu {
+        position: absolute;
+        background: rgba(0, 0, 0, 0.8);
+        top: 132px;
+        z-index: 100;
+        flex-direction: column;
+        gap: 0;
+        margin: 0;
+        opacity: 0;
+        height: 0;
+    }
+    .navbar__menu  .navbar__item.submenu__item{
+        display: inherit;
+    }
+    iconify-icon{
+        display: none;
+    }
+    .navbar__menu.show {
+        opacity: 1;
+        height: auto;
+    }
+    .navbar__menu li {
+        min-width: 250px;
+        width: 60%;
+        padding: 10px;
+        border-bottom: solid 2px #fafaff;
+    }
+    .navbar__menu li img{
+        max-height: 30px;
+        max-width: 30px;
+        margin-left: 8px;
+    }
+}
+/* De 600px a 959px */
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+    /* Estilos para pantallas pequeñas */
+    body {
+        background-color: skyblue;
+        overflow-x: hidden;
+    }
+  }
