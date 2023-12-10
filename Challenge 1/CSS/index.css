@@ -84,6 +84,8 @@ p {
 
 img {
     width: 100%;
+    box-shadow: 0 0 10px rgb(124, 112, 112);
+    border-radius: 20px;
 }
 
 .container {
